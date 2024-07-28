@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}Instalando e Configurando o Visual Studio Code{% endblock %}
+
+{% block content %}
+<main>
+    <section class="titulo-tutos">
+        <h1>Instalando e Configurando o Visual Studio Code</h1>
+    </section>
+    <section class="step">
+        <h2>Passo 1: Baixar o Instalador do VS Code</h2>
+        <p>1. Acesse o site oficial do Visual Studio Code:</p>
+        <p><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></p>
+        <p>2. Clique no botão <strong>Download</strong> para baixar o instalador adequado para seu sistema operacional
+            (Windows, macOS ou Linux).</p>
+    </section>
+
+    <section class="step">
+        <h2>Passo 2: Instalar o Visual Studio Code</h2>
+        <p>1. Abra o arquivo de instalação que você baixou.</p>
+        <p>2. Siga as instruções do assistente de instalação:</p>
+        <ul class="listas-tutoriais">
+            <li>Para Windows: Execute o instalador e siga as instruções. Você pode selecionar a opção de adicionar o VS
+                Code ao PATH durante a instalação.</li>
+            <li>Para macOS: Arraste o ícone do VS Code para a pasta <strong>Applications</strong>.</li>
+            <li>Para Linux: Use o gerenciador de pacotes para instalar o VS Code. Por exemplo, no Ubuntu, você pode usar
+                o seguinte comando:</li>
+            <div class="command">sudo apt install ./<nome_do_arquivo>.deb</div>
+        </ul>
+    </section>
+
+    <section class="step">
+        <h2>Passo 3: Configurar o VS Code</h2>
+        <p>1. Abra o Visual Studio Code.</p>
+        <p>2. Instale as extensões recomendadas para facilitar o desenvolvimento:</p>
+        <div class="command">Ctrl+Shift+X</div>
+        <p>3. Pesquise e instale as seguintes extensões:</p>
+        <ul class="listas-tutoriais">
+            <li><strong>Python:</strong> Para suporte ao Python.</li>
+            <li><strong>Prettier:</strong> Para formatação automática de código.</li>
+            <li><strong>GitLens:</strong> Para integração avançada com Git.</li>
+            <li><strong>ESLint:</strong> Para análise e correção automática de erros de JavaScript e TypeScript.</li>
+            <li><strong>Live Server:</strong> Para pré-visualização em tempo real de arquivos HTML no navegador.</li>
+            <li><strong>Bracket Pair Colorizer:</strong> Para colorir pares de colchetes e melhorar a legibilidade do
+                código.</li>
+            <li><strong>Debugger for Chrome:</strong> Para depuração de código JavaScript e TypeScript diretamente no
+                Chrome.</li>
+            <li><strong>Vetur:</strong> Para suporte a Vue.js, incluindo análise e formatação de código.</li>
+            <li><strong>Auto Rename Tag:</strong> Para renomear automaticamente tags HTML/XML correspondentes.</li>
+            <li><strong>Markdown All in One:</strong> Para suporte completo ao Markdown, incluindo visualização e
+                atalhos úteis.</li>
+            <li><strong>Docker:</strong> Para integração com Docker, incluindo gerenciamento de containers e imagens.
+            </li>
+            <li><strong>Jinja:</strong> Para suporte a templates Jinja2 usados em projetos Python.</li>
+            <li><strong>Settings Sync:</strong> Para sincronizar suas configurações do VS Code entre diferentes
+                dispositivos.</li>
+            <li><strong>Remote - WSL:</strong> Para desenvolvimento remoto usando o Windows Subsystem for Linux (WSL).
+            </li>
+            <li><strong>Path Intellisense:</strong> Para autocompletar caminhos de arquivos e pastas.</li>
+
+        </ul>
+    </section>
+
+    <section class="step">
+        <h2>Passo 4: Utilizar o Terminal Integrado</h2>
+        <p>1. Abra o terminal integrado do VS Code:</p>
+        <div class="command">Ctrl+`</div>
+        <p>2. Use o terminal para executar comandos diretamente no VS Code, como:</p>
+        <div class="command">python --version</div>
+        <div class="command">git status</div>
+    </section>
+
+    <section class="step">
+        <h2>Passo 5: Configurar Atalhos de Teclado</h2>
+        <p>1. Acesse a configuração de atalhos de teclado:</p>
+        <div class="command">Ctrl+K Ctrl+S</div>
+        <p>2. Personalize os atalhos de acordo com suas preferências. Por exemplo:</p>
+        <ul class="listas-tutoriais">
+            <li>Alterar o atalho para abrir a paleta de comandos.</li>
+            <li>Configurar atalhos para comandos frequentes, como "Format Document".</li>
+        </ul>
+    </section>
+
+    <section class="step">
+        <h2>Passo 6: Criar e Gerenciar Projetos</h2>
+        <p>1. Abra ou crie um novo projeto:</p>
+        <div class="command">File &gt; Open Folder...</div>
+        <p>2. Adicione arquivos ao seu projeto e comece a codificar!</p>
+    </section>
+
+    <section class="step">
+        <h2>Passo 7: Usar o Controle de Versão (Git)</h2>
+        <p>1. Abra o painel de controle de versão:</p>
+        <div class="command">Ctrl+Shift+G</div>
+        <p>2. Inicialize um novo repositório Git ou conecte-se a um repositório existente.</p>
+        <p>3. Use o painel para fazer commits, criar branches e muito mais.</p>
+    </section>
+
+    <section class="step">
+        <h2>Passo 8: Personalizar o VS Code</h2>
+        <p>1. Acesse as configurações:</p>
+        <div class="command">Ctrl+,</div>
+        <p>2. Personalize temas, fontes e outras configurações para melhorar sua experiência de desenvolvimento.</p>
+    </section>
+</main>
+{% endblock %}

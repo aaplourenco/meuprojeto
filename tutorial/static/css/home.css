@@ -1,0 +1,130 @@
+@import url('root.css');
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-base {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-family: var(--font-share-tech);
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+body {
+    font-family: var(--font-roboto-mono);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+}
+
+.container-tutoriais {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.tutoriais {
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 270px;
+    text-align: center;
+    padding: 10px;
+}
+
+.tutoriais img {
+    width: 240px;
+    height: 130px;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.tutoriais h3 {
+    margin: 10px 0;
+    font-size: 15px !important;
+    text-align: start;
+    color: #333;
+}
+
+.tutoriais p {
+    font-size: 13px !important;
+    color: #666;
+    text-align: justify !important;
+}
+
+.tutoriais:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content {
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        display: block;
+    }
+
+    .footer-links a {
+        display: block;
+        margin: 5px 0;
+    }
+}

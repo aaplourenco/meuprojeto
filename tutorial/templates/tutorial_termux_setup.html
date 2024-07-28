@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% block title %}Instalando e Configurando o Termux{% endblock %}
+
+{% block content %}
+<main>
+    <section class="titulo-tutos"><h1>Instalando e Configurando o Termux</h1></section>
+    <section class="step">
+        <h2>Passo 1: Instalar o Termux</h2>
+        <p>1. Abra a Google Play Store no seu dispositivo Android.</p>
+        <p>2. Pesquise por "Termux" e instale o aplicativo.</p>
+        <p>3. Abra o Termux após a instalação.</p>
+    </section>
+
+    <section class="step">
+        <h2>Passo 2: Instalar o Python e Git</h2>
+        <p>1. Atualizar os pacotes do Termux:</p>
+        <div class="command">pkg update && pkg upgrade</div>
+        <p>2. Instalar o Python:</p>
+        <div class="command">pkg install python</div>
+        <p>
+            Confirme a instalação pressionando <code>y</code> quando solicitado.
+        </p>
+        <p>3. Instalar o Git:</p>
+        <div class="command">pkg install git</div>
+    </section>
+
+    <section class="step">
+        <h2>Passo 3: Criar e Configurar um Ambiente Virtual</h2>
+        <p>1. Instalar o <code>virtualenv</code>:</p>
+        <div class="command">pip install virtualenv</div>
+        <p>2. Criar um diretório para o seu projeto:</p>
+        <div class="command">mkdir meuprojeto</div>
+        <p>3. Navegar para o diretório do projeto:</p>
+        <div class="command">cd meuprojeto/</div>
+        <p>4. Criar um ambiente virtual:</p>
+        <div class="command">virtualenv env</div>
+        <p>5. Ativar o ambiente virtual:</p>
+        <div class="command">. env/bin/activate</div>
+    </section>
+
+    <section class="step">
+        <h2>Passo 4: Instalar Django e Configurar o Projeto</h2>
+        <p>1. Instalar Django dentro do ambiente virtual:</p>
+        <div class="command">pip install django</div>
+        <p>2. Criar um novo projeto Django:</p>
+        <div class="command">django-admin startproject mysite .</div>
+        <p>3. Configurar o ambiente criando as tabelas necessárias:</p>
+        <div class="command">python manage.py migrate</div>
+        <p>4. Iniciar o servidor de desenvolvimento do Django:</p>
+        <div class="command">python manage.py runserver</div>
+        <p>Para parar o servidor, pressione <code>Ctrl + C</code>.</p>
+    </section>
+
+    <section class="step">
+        <h2>Passo 5: Instalar e Usar o Editor Micro</h2>
+        <p>1. Instalar o Micro:</p>
+        <div class="command">pkg install micro</div>
+        <p>2. Criar e editar arquivos com o Micro:</p>
+        <div class="command">micro nome_do_arquivo.html</div>
+        <p>Para salvar o arquivo, pressione <code>Ctrl + S</code>.</p>
+        <p>Para sair do Micro, pressione <code>Ctrl + Q</code>.</p>
+        <p><strong>Atalhos Comuns no Micro:</strong></p>
+        <ul class="listas-tutoriais">
+            <li>Salvar: <code>Ctrl + S</code></li>
+            <li>Sair: <code>Ctrl + Q</code></li>
+            <li>Copiar: <code>Ctrl + C</code></li>
+            <li>Cortar: <code>Ctrl + X</code></li>
+            <li>Colar: <code>Ctrl + V</code></li>
+            <li>Desfazer: <code>Ctrl + Z</code></li>
+            <li>Refazer: <code>Ctrl + Y</code></li>
+            <li>Procurar: <code>Ctrl + F</code></li>
+            <li>Ir para linha: <code>Ctrl + G</code></li>
+        </ul>
+    </section>
+
+    <section class="step">
+        <h2>Passo 6: Visualizar Arquivos Estáticos</h2>
+        <p>
+            Se você deseja apenas visualizar arquivos HTML e não configurar todo o
+            projeto Django, pode usar o servidor simples do Python:
+        </p>
+        <div class="command">python3 -m http.server</div>
+        <p>
+            Isso inicia um servidor simples que serve arquivos estáticos na pasta
+            atual. Acesse <code>http://localhost:8000</code> no seu navegador para
+            visualizar o conteúdo.
+        </p>
+    </section>
+
+    <section class="step">
+        <h2>Passo 7: Configurar Git e GitHub</h2>
+        <p>1. Criar um repositório vazio no GitHub:</p>
+        <ul class="listas-tutoriais">
+            <li>
+                Acesse <a href="https://github.com/">GitHub</a> e faça login na sua
+                conta.
+            </li>
+            <li>
+                Clique no botão <strong>New</strong> (Novo) para criar um novo
+                repositório.
+            </li>
+            <li>
+                Dê um nome para o repositório e clique em
+                <strong>Create repository</strong> (Criar repositório).
+            </li>
+        </ul>
+
+        <p>2. Configurar o Git:</p>
+        <div class="command">git config --global user.name "seu nome"</div>
+        <div class="command">git config --global user.email "seu email"</div>
+
+        <p>3. Gerar e Configurar a Chave SSH:</p>
+        <div class="command">ssh-keygen -t rsa -b 4096 -C "seu email"</div>
+        <p>
+            Quando solicitado, pressione <code>Enter</code> para aceitar o local
+            padrão do arquivo.
+        </p>
+        <div class="command">cat ~/.ssh/id_rsa.pub</div>
+        <p>Copie o conteúdo exibido.</p>
+
+        <p>4. Adicionar a chave SSH ao GitHub:</p>
+        <ul class="listas-tutoriais">
+            <li>
+                Acesse <a href="https://github.com/">GitHub</a> e faça login na sua
+                conta.
+            </li>
+            <li>
+                Vá para <strong>Settings</strong> (Configurações) clicando na sua
+                foto de perfil no canto superior direito.
+            </li>
+            <li>
+                No menu à esquerda, clique em <strong>SSH and GPG keys</strong>.
+            </li>
+            <li>Clique no botão <strong>New SSH key</strong>.</li>
+            <li>
+                No campo <strong>Title</strong>, dê um nome para a chave (por
+                exemplo, "Termux").
+            </li>
+            <li>
+                No campo <strong>Key</strong>, cole a chave pública que você copiou
+                anteriormente.
+            </li>
+            <li>Clique em <strong>Add SSH key</strong> para salvar.</li>
+        </ul>
+    </section>
+
+    <section class="step">
+        <h2>
+            Passo 8: Inicializar o Repositório Git e Enviar Arquivos para o GitHub
+        </h2>
+        <p>1. Navegar até o diretório do projeto:</p>
+        <div class="command">cd ~/meuprojeto</div>
+
+        <p>2. Inicializar o repositório Git:</p>
+        <div class="command">git init</div>
+
+        <p>3. Adicionar todos os arquivos ao repositório:</p>
+        <div class="command">git add .</div>
+
+        <p>4. Fazer o primeiro commit:</p>
+        <div class="command">git commit -m "Primeiro commit"</div>
+
+        <p>5. Adicionar o repositório remoto no GitHub:</p>
+        <div class="command">
+            git remote add origin git@github.com:usuario/nome-do-repositorio.git
+        </div>
+
+        <p>6. Enviar os arquivos para o GitHub:</p>
+        <div class="command">git push -u origin master</div>
+    </section>
+</main>
+{% endblock %}

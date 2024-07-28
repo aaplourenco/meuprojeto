@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<main>
+    <section>
+        <h2>Seja bem-vindo ao nosso site!</h2>
+        <p>{TutosDevs} - Tutoriais para Iniciantes.</p>
+    </section>
+    <section class="container-tutoriais">
+        <div class="tutoriais" data-link="{% url 'tutorial_termux_setup' %}">
+            <img src="{% static 'images/termux.png' %}" alt="Introdução ao Termux" />
+            <h3>Instalando e Configurando o Termux</h3>
+            <p>Aprenda a instalar e configurar o Termux no seu Android para programar em Python e usar Git, além de
+                editar código com o Micro. Ideal para quem quer desenvolver diretamente no mobile.</p>
+        </div>
+        <div class="tutoriais" data-link="{% url 'tutorial_vscode_setup' %}">
+            <img src="{% static 'images/vscode.png' %}" alt="Introdução ao VS Code" />
+            <h3>Instalando e Configurando o VS Code</h3>
+            <p>Descubra como instalar e configurar o VS Code, um editor de código poderoso, e aproveite extensões
+                essenciais para facilitar o desenvolvimento em várias linguagens.</p>
+        </div>
+        <div class="tutoriais" data-link="{% url 'tutorial_html_css_js_basics' %}">
+            <img src="{% static 'images/html-css-javascript.jpg' %}" alt="Introdução ao HTML, CSS e JS" />
+            <h3>Introdução ao HTML, CSS e JavaScript</h3>
+            <p>Um guia para iniciantes sobre HTML, CSS e JavaScript. Aprenda a criar e estilizar páginas web, e
+                adicionar interatividade com dicas práticas e boas práticas.</p>
+        </div>
+        <div class="tutoriais" data-link="{% url 'tutorial_git_github_intro' %}">
+            <img src="{% static 'images/git-github.png' %}" alt="Introdução ao Git e GitHub" />
+            <h3>Introdução ao Git e GitHub</h3>
+            <p>Aprenda os fundamentos do controle de versão com Git e como usar o GitHub para colaborar em projetos de software. Inclui comandos básicos e colaboração com pull requests e branches.</p>
+        </div>
+        <div class="tutoriais" data-link="{% url 'tutorial_python_fundamentals' %}">
+            <img src="{% static 'images/python.png' %}" alt="Fundamentos de Python" />
+            <h3>Fundamentos de Python</h3>
+            <p>Um tutorial que cobre os conceitos básicos da programação em Python. Inclui variáveis, estruturas de controle, funções, módulos, e manipulação de arquivos.</p>
+        </div>
+        <div class="tutoriais" data-link="{% url 'tutorial_sqlite_sqlalchemy' %}">
+            <img src="{% static 'images/sqlite-sqlalchemy.jpg' %}" alt="Fundamentos do Banco de Dados com SQLite e SQLAlchemy" />
+            <h3>Fundamentos do Banco de Dados com SQLite e SQLAlchemy</h3>
+            <p>Entenda os conceitos básicos de bancos de dados relacionais usando SQLite e SQLAlchemy. Inclui instalação, comandos básicos de SQL e uso do SQLAlchemy para interagir com o banco de dados.</p>
+        </div>
+    </section>
+    
+</main>
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+
+{% block title %}Introdução ao HTML, CSS e JavaScript{% endblock %}
+
+{% block content %}
+<main>
+    <section class="titulo-tutos"><h1>Introdução ao HTML, CSS e JavaScript</h1></section>
+    <section class="step">
+        <h2>Passo 1: Introdução ao HTML</h2>
+        <p>HTML (HyperText Markup Language) é a linguagem de marcação usada para estruturar o conteúdo da web. É a base
+            de qualquer página da web.</p>
+        <p>Aqui estão algumas das tags HTML mais importantes e como elas são usadas:</p>
+        <ul class="listas-tutoriais">
+            <li><strong>&lt;html&gt;</strong>: A tag raiz de um documento HTML. Todos os outros elementos devem estar
+                dentro dela.</li>
+            <li><strong>&lt;head&gt;</strong>: Contém metadados sobre o documento, como o título e links para arquivos
+                CSS e JavaScript.</li>
+            <li><strong>&lt;title&gt;</strong>: Define o título da página, que aparece na aba do navegador.</li>
+            <li><strong>&lt;body&gt;</strong>: Contém o conteúdo visível da página, como texto, imagens e links.</li>
+            <li><strong>&lt;h1&gt; a &lt;h6&gt;</strong>: Tags de cabeçalho que definem a importância do texto, com
+                &lt;h1&gt; sendo o mais importante e &lt;h6&gt; o menos.</li>
+            <li><strong>&lt;p&gt;</strong>: Define um parágrafo de texto.</li>
+            <li><strong>&lt;a&gt;</strong>: Cria um link para outra página ou recurso.</li>
+            <li><strong>&lt;img&gt;</strong>: Insere uma imagem na página.</li>
+            <li><strong>&lt;div&gt;</strong>: Define uma divisão ou seção na página, útil para agrupar elementos.</li>
+            <li><strong>&lt;span&gt;</strong>: Define uma pequena seção de texto dentro de um elemento maior, útil para
+                aplicar estilos.</li>
+        </ul>
+        <p>Exemplo de um documento HTML básico:</p>
+        <pre>
+<code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Meu Primeiro Documento HTML&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
+        &lt;p&gt;Este é um parágrafo de exemplo.&lt;/p&gt;
+        &lt;a href="https://www.exemplo.com"&gt;Visite o Exemplo&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>
+        </pre>
+    </section>
+
+    <section class="step">
+        <h2>Passo 2: Introdução ao CSS</h2>
+        <p>CSS (Cascading Style Sheets) é usado para estilizar e layout o conteúdo HTML. Ele permite que você defina
+            cores, fontes e layout da página.</p>
+        <p>Existem três maneiras principais de adicionar CSS ao seu HTML:</p>
+        <ul class="listas-tutoriais">
+            <li><strong>Inline CSS:</strong> Adicione o estilo diretamente ao elemento HTML com o atributo
+                <code>style</code>. Exemplo: <code>&lt;div style="color: blue;"&gt;Texto&lt;/div&gt;</code></li>
+            <li><strong>Internal CSS:</strong> Coloque o CSS dentro da tag <code>&lt;style&gt;</code> no
+                <code>&lt;head&gt;</code> do HTML. Exemplo:</li>
+            <pre>
+<code>
+&lt;style&gt;
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+    h1 {
+        color: #333;
+    }
+&lt;/style&gt;
+</code>
+            </pre>
+            <li><strong>External CSS:</strong> Coloque o CSS em um arquivo separado com a extensão <code>.css</code> e
+                vincule-o ao HTML usando a tag <code>&lt;link&gt;</code>. Exemplo:</li>
+            <pre>
+<code>
+&lt;link rel="stylesheet" href="styles.css"&gt;
+</code>
+            </pre>
+        </ul>
+        <p>Exemplo de CSS para estilizar um título e um parágrafo:</p>
+        <pre>
+<code>
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+</code>
+        </pre>
+    </section>
+
+    <section class="step">
+        <h2>Passo 3: Introdução ao JavaScript</h2>
+        <p>JavaScript é uma linguagem de programação que permite adicionar interatividade às páginas da web. Com
+            JavaScript, você pode criar funcionalidades dinâmicas e responder a eventos do usuário.</p>
+        <p>Os conceitos básicos do JavaScript incluem:</p>
+        <ul class="listas-tutoriais">
+            <li><strong>Variáveis:</strong> Usadas para armazenar dados. Exemplo: <code>let nome = 'Ana';</code></li>
+            <li><strong>Funções:</strong> Blocos de código que podem ser chamados quando necessário. Exemplo:
+                <code>function saudacao() { alert('Olá!'); }</code></li>
+            <li><strong>Eventos:</strong> Permitem responder a ações do usuário, como cliques. Exemplo:
+                <code>document.getElementById('meuBotao').onclick = function() { alert('Botão clicado!'); };</code></li>
+            <li><strong>Manipulação do DOM:</strong> Permite alterar o conteúdo e o estilo dos elementos HTML. Exemplo:
+                <code>document.getElementById('meuElemento').style.color = 'red';</code></li>
+        </ul>
+        <p>Exemplo básico de um script JavaScript:</p>
+        <pre>
+<code>
+&lt;script&gt;
+    function mostrarMensagem() {
+        alert('Olá, Mundo!');
+    }
+    
+    document.getElementById('meuBotao').addEventListener('click', mostrarMensagem);
+&lt;/script&gt;
+</code>
+        </pre>
+    </section>
+
+    <section class="step">
+        <h2>Passo 4: Boas Práticas e Dicas</h2>
+        <p>Para garantir que seu código HTML, CSS e JavaScript seja limpo, eficiente e fácil de manter, siga estas boas
+            práticas:</p>
+        <ul class="listas-tutoriais">
+            <li><strong>HTML Semântico:</strong> Use tags HTML semânticas para melhorar a acessibilidade e SEO. Tags
+                como <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code> e <code>&lt;article&gt;</code> fornecem
+                significado ao conteúdo.</li>
+            <li><strong>Organização do Código:</strong> Mantenha seu CSS e JavaScript em arquivos separados para uma
+                melhor organização e reutilização. Utilize comentários para explicar o código.</li>
+            <li><strong>Responsividade:</strong> Use media queries para garantir que seu site seja visualmente atraente
+                em diferentes tamanhos de tela. Exemplo: <code>@media (max-width: 600px) { body { font-size: 14px; }
+                    }</code></li>
+            <li><strong>Validação:</strong> Utilize ferramentas como o <a href="https://validator.w3.org/"
+                    target="_blank">W3C Validator</a> para verificar erros e conformidade com os padrões HTML e CSS.
+            </li>
+            <li><strong>Desempenho:</strong> Minimize e compacte seus arquivos CSS e JavaScript para melhorar o tempo de
+                carregamento da página. Utilize ferramentas de minificação como <a href="https://cssminifier.com/"
+                    target="_blank">CSS Minifier</a> e <a href="https://javascript-minifier.com/"
+                    target="_blank">JavaScript Minifier</a>.</li>
+            <li><strong>Testes:</strong> Teste seu site em diferentes navegadores e dispositivos para garantir que ele
+                funcione corretamente em todos os ambientes.</li>
+        </ul>
+    </section>
+
+    <section class="step">
+        <h2>Passo 5: Recursos Adicionais</h2>
+        <p>Para continuar aprendendo sobre HTML, CSS e JavaScript, explore os seguintes recursos:</p>
+        <ul class="listas-tutoriais">
+            <li><a href="https://developer.mozilla.org/pt-BR/" target="_blank">Mozilla Developer Network (MDN)</a> -
+                Documentação abrangente e tutoriais sobre HTML, CSS e JavaScript.</li>
+            <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a> - Tutoriais e exemplos interativos
+                para HTML, CSS e JavaScript.</li>
+            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a> - Dicas e técnicas avançadas de CSS.
+            </li>
+            <li><a href="https://javascript.info/" target="_blank">JavaScript.info</a> - Guia detalhado para aprender
+                JavaScript.</li>
+            <li><a href="https://codepen.io/" target="_blank">CodePen</a> - Experimente e compartilhe código HTML, CSS e
+                JavaScript.</li>
+            <li><a href="https://stackblitz.com/" target="_blank">StackBlitz</a> - Ambiente de desenvolvimento online
+                para projetos web.</li>
+        </ul>
+    </section>
+</main>
+{% endblock %}

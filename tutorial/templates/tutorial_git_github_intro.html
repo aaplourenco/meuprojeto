@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Introdução ao Git e GitHub{% endblock %}
+
+{% block content %}
+<main>
+    <section class="titulo-tutos"><h1>Introdução ao Git e GitHub</h1></section>
+    <section class="step">
+        <h2>Passo 1: O que é Git e por que usá-lo</h2>
+        <p>O Git é um sistema de controle de versão distribuído que ajuda a gerenciar o código-fonte ao longo do tempo. Ele permite que vários desenvolvedores trabalhem no mesmo projeto simultaneamente, rastreando todas as mudanças e facilitando a colaboração.</p>
+    </section>
+
+    <section class="step">
+        <h2>Passo 2: Instalação e Configuração do Git</h2>
+        <p>Para instalar e configurar o Git, siga os passos abaixo:</p>
+        <h3>Instalação</h3>
+        <p>No Windows:</p>
+        <div class="command">Baixe e instale o Git do site oficial: <a href="https://git-scm.com/">https://git-scm.com/</a></div>
+        <p>No macOS:</p>
+        <div class="command">brew install git</div>
+        <p>No Linux:</p>
+        <div class="command">sudo apt-get install git</div>
+
+        <h3>Configuração Inicial</h3>
+        <p>Após instalar o Git, configure seu nome de usuário e e-mail:</p>
+        <div class="command">git config --global user.name "Seu Nome"</div>
+        <div class="command">git config --global user.email "seu.email@example.com"</div>
+    </section>
+
+    <section class="step">
+        <h2>Passo 3: Comandos Básicos do Git</h2>
+        <p>Aprenda os comandos básicos do Git para começar a usar o controle de versão:</p>
+        <p><strong>Inicializar um repositório Git:</strong></p>
+        <div class="command">git init</div>
+        <p><strong>Adicionar arquivos ao índice (staging area):</strong></p>
+        <div class="command">git add .</div>
+        <p><strong>Registrar as mudanças no repositório:</strong></p>
+        <div class="command">git commit -m "Mensagem do commit"</div>
+        <p><strong>Enviar as mudanças para um repositório remoto:</strong></p>
+        <div class="command">git push</div>
+        <p><strong>Atualizar o repositório local com mudanças do remoto:</strong></p>
+        <div class="command">git pull</div>
+    </section>
+
+    <section class="step">
+        <h2>Passo 4: Criando e Gerenciando Repositórios no GitHub</h2>
+        <p>Siga os passos para criar um novo repositório no GitHub e conectá-lo ao seu repositório local:</p>
+        <h3>Criando um Repositório no GitHub</h3>
+        <ul class="listas-tutoriais">
+            <li>Acesse <a href="https://github.com/">GitHub</a> e faça login na sua conta.</li>
+            <li>Clique no botão <strong>New</strong> (Novo) para criar um novo repositório.</li>
+            <li>Dê um nome para o repositório e clique em <strong>Create repository</strong> (Criar repositório).</li>
+        </ul>
+        
+        <h3>Conectando o Repositório Local ao GitHub</h3>
+        <p>Adicione o repositório remoto no GitHub ao seu repositório local:</p>
+        <div class="command">git remote add origin git@github.com:usuario/nome-do-repositorio.git</div>
+    </section>
+
+    <section class="step">
+        <h2>Passo 5: Como Colaborar com Outros Desenvolvedores Usando Pull Requests e Branches</h2>
+        <h3>Criando e Mudando para Novas Branches</h3>
+        <p>Para criar e mudar para uma nova branch:</p>
+        <div class="command">git checkout -b nome-da-branch</div>
+
+        <h3>Fazendo Pull Requests</h3>
+        <p>Após fazer commits na nova branch, envie as mudanças para o repositório remoto:</p>
+        <div class="command">git push origin nome-da-branch</div>
+        <p>No GitHub, abra um pull request da sua branch para a branch principal do projeto.</p>
+
+        <h3>Revisando e Mesclando Pull Requests</h3>
+        <p>Revise o pull request, discuta as mudanças e, se estiver tudo certo, mescle o pull request na branch principal.</p>
+    </section>
+</main>
+{% endblock %}

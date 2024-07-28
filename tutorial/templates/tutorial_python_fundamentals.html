@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block title %}Fundamentos de Python{% endblock %}
+
+{% block content %}
+<main>
+    <section class="titulo-tutos"><h1>Fundamentos de Python</h1></section>
+    <section class="step">
+        <h2>Passo 1: Introdução ao Python</h2>
+        <p>Python é uma linguagem de programação de alto nível, interpretada e de propósito geral, conhecida por sua sintaxe simples e legibilidade. É amplamente usada para desenvolvimento web, ciência de dados, automação de tarefas e muito mais.</p>
+        <h3>Instalação do Python</h3>
+        <p>No Windows:</p>
+        <div class="command">Baixe e instale o Python do site oficial: <a href="https://www.python.org/">https://www.python.org/</a></div>
+        <p>No macOS:</p>
+        <div class="command">brew install python</div>
+        <p>No Linux:</p>
+        <div class="command">sudo apt-get install python3</div>
+    </section>
+
+    <section class="step">
+        <h2>Passo 2: Primeiros Passos com Python</h2>
+        <h3>Executando o Interpretador Python</h3>
+        <p>Abra o terminal ou prompt de comando e digite <code>python</code> ou <code>python3</code> para iniciar o interpretador Python.</p>
+        <p>Você verá um prompt interativo onde pode digitar comandos Python e vê-los executados imediatamente.</p>
+
+        <h3>Escrevendo e Executando Scripts Python</h3>
+        <p>Crie um arquivo com a extensão <code>.py</code> (por exemplo, <code>hello.py</code>) e adicione o seguinte código:</p>
+        <pre><code>print("Hello, World!")</code></pre>
+        <p>No terminal, navegue até o diretório onde o arquivo está salvo e execute:</p>
+        <div class="command">python hello.py</div>
+    </section>
+
+    <section class="step">
+        <h2>Passo 3: Conceitos Básicos de Programação</h2>
+        <h3>Variáveis e Tipos de Dados</h3>
+        <p>Python suporta vários tipos de dados, incluindo números, strings, listas, tuplas e dicionários.</p>
+        <pre><code>
+# Exemplo de variáveis
+num = 10
+nome = "Ana"
+lista = [1, 2, 3]
+tupla = (4, 5, 6)
+dicionario = {"chave": "valor"}
+        </code></pre>
+
+        <h3>Estruturas de Controle</h3>
+        <p>Utilize estruturas de controle como <code>if</code>, <code>else</code>, <code>elif</code>, <code>for</code> e <code>while</code> para controlar o fluxo do programa.</p>
+        <pre><code>
+# Exemplo de estrutura de controle
+if num > 5:
+    print("Maior que 5")
+else:
+    print("Menor ou igual a 5")
+
+# Loop for
+for i in lista:
+    print(i)
+
+# Loop while
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+        </code></pre>
+
+        <h3>Funções e Módulos</h3>
+        <p>Funções permitem reutilizar código. Módulos são arquivos Python que podem conter funções, classes e variáveis.</p>
+        <pre><code>
+# Definindo uma função
+def saudacao(nome):
+    print(f"Olá, {nome}!")
+
+saudacao("Ana")
+
+# Importando um módulo
+import math
+print(math.sqrt(16))
+        </code></pre>
+    </section>
+
+    <section class="step">
+        <h2>Passo 4: Trabalhando com Arquivos</h2>
+        <h3>Leitura e Escrita de Arquivos</h3>
+        <p>Use as funções <code>open()</code>, <code>read()</code>, <code>write()</code> e <code>close()</code> para manipular arquivos.</p>
+        <pre><code>
+# Escrevendo em um arquivo
+with open("exemplo.txt", "w") as arquivo:
+    arquivo.write("Hello, World!")
+
+# Lendo de um arquivo
+with open("exemplo.txt", "r") as arquivo:
+    conteudo = arquivo.read()
+    print(conteudo)
+        </code></pre>
+        
+        <h3>Manipulação de Arquivos e Diretórios</h3>
+        <p>Utilize o módulo <code>os</code> para manipular arquivos e diretórios.</p>
+        <pre><code>
+import os
+
+# Criando um diretório
+os.mkdir("novo_diretorio")
+
+# Listando arquivos em um diretório
+print(os.listdir("."))
+        </code></pre>
+    </section>
+
+    <section class="step">
+        <h2>Passo 5: Introdução à Programação Orientada a Objetos (POO)</h2>
+        <h3>Classes e Objetos</h3>
+        <p>Classes são "modelos" para criar objetos. Objetos são instâncias de classes.</p>
+        <pre><code>
+# Definindo uma classe
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def saudacao(self):
+        print(f"Olá, meu nome é {self.nome} e eu tenho {self.idade} anos.")
+
+# Criando um objeto
+pessoa = Pessoa("Ana", 30)
+pessoa.saudacao()
+        </code></pre>
+
+        <h3>Métodos e Atributos</h3>
+        <p>Métodos são funções definidas dentro de uma classe. Atributos são variáveis associadas a uma classe.</p>
+        
+        <h3>Herança e Polimorfismo</h3>
+        <p>Herança permite que uma classe herde atributos e métodos de outra classe. Polimorfismo permite usar métodos de forma intercambiável em diferentes classes.</p>
+        <pre><code>
+# Herança
+class Animal:
+    def som(self):
+        pass
+
+class Cachorro(Animal):
+    def som(self):
+        return "Latido"
+
+class Gato(Animal):
+    def som(self):
+        return "Miado"
+
+# Polimorfismo
+animais = [Cachorro(), Gato()]
+for animal in animais:
+    print(animal.som())
+        </code></pre>
+    </section>
+</main>
+{% endblock %}

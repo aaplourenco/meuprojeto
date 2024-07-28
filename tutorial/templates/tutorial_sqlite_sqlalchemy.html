@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+{% block title %}Fundamentos do Banco de Dados com SQLite e SQLAlchemy{% endblock %}
+
+{% block content %}
+<main>
+    <section class="titulo-tutos"><h1>Fundamentos do Banco de Dados com SQLite e SQLAlchemy</h1></section>
+    <section class="step">
+        <h2>Passo 1: O que são Bancos de Dados e por que usá-los</h2>
+        <p>Bancos de dados relacionais são sistemas que permitem armazenar, organizar e recuperar dados de forma eficiente. Eles oferecem vantagens como integridade dos dados, flexibilidade nas consultas e suporte a transações.</p>
+    </section>
+
+    <section class="step">
+        <h2>Passo 2: Instalação e Configuração do SQLite e SQLAlchemy</h2>
+        <h3>Instalando o SQLite</h3>
+        <p>SQLite vem pré-instalado na maioria dos sistemas, mas pode ser baixado de <a href="https://www.sqlite.org/download.html">https://www.sqlite.org/download.html</a> se necessário.</p>
+        <h3>Instalando o SQLAlchemy</h3>
+        <div class="command">pip install sqlalchemy</div>
+    </section>
+
+    <section class="step">
+        <h2>Passo 3: Comandos Básicos do SQLite</h2>
+        <h3>Criando e Conectando a um Banco de Dados SQLite</h3>
+        <pre><code>
+import sqlite3
+
+# Conectando a um banco de dados (ou criando um novo)
+conn = sqlite3.connect('exemplo.db')
+
+# Criando um cursor
+cursor = conn.cursor()
+        </code></pre>
+
+        <h3>Comandos SQL Básicos</h3>
+        <h4>CREATE</h4>
+        <pre><code>
+# Criando uma tabela
+cursor.execute('''CREATE TABLE IF NOT EXISTS usuarios
+                  (id INTEGER PRIMARY KEY, nome TEXT, idade INTEGER)''')
+conn.commit()
+        </code></pre>
+        <h4>READ</h4>
+        <pre><code>
+# Lendo dados
+cursor.execute('SELECT * FROM usuarios')
+print(cursor.fetchall())
+        </code></pre>
+        <h4>UPDATE</h4>
+        <pre><code>
+# Atualizando dados
+cursor.execute('UPDATE usuarios SET idade = 30 WHERE nome = "Ana"')
+conn.commit()
+        </code></pre>
+        <h4>DELETE</h4>
+        <pre><code>
+# Deletando dados
+cursor.execute('DELETE FROM usuarios WHERE nome = "Ana"')
+conn.commit()
+        </code></pre>
+    </section>
+
+    <section class="step">
+        <h2>Passo 4: Usando SQLAlchemy para Interagir com o Banco de Dados</h2>
+        <h3>Configuração Inicial do SQLAlchemy</h3>
+        <pre><code>
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+# Criando o motor de banco de dados
+engine = create_engine('sqlite:///exemplo.db')
+
+# Criando a base declarativa
+Base = declarative_base()
+
+# Criando a sessão
+Session = sessionmaker(bind=engine)
+session = Session()
+        </code></pre>
+
+        <h3>Definindo Modelos de Dados com Classes Python</h3>
+        <pre><code>
+from sqlalchemy import Column, Integer, String
+
+class Usuario(Base):
+    __tablename__ = 'usuarios'
+    id = Column(Integer, primary_key=True)
+    nome = Column(String)
+    idade = Column(Integer)
+
+# Criando as tabelas no banco de dados
+Base.metadata.create_all(engine)
+        </code></pre>
+
+        <h3>Criando e Manipulando Registros no Banco de Dados</h3>
+        <pre><code>
+# Criando um novo usuário
+novo_usuario = Usuario(nome='Ana', idade=25)
+session.add(novo_usuario)
+session.commit()
+
+# Lendo dados
+usuarios = session.query(Usuario).all()
+for usuario in usuarios:
+    print(usuario.nome, usuario.idade)
+
+# Atualizando dados
+usuario = session.query(Usuario).filter_by(nome='Ana').first()
+usuario.idade = 30
+session.commit()
+
+# Deletando dados
+session.delete(usuario)
+session.commit()
+        </code></pre>
+    </section>
+
+    <section class="step">
+        <h2>Passo 5: Consultas Básicas com SQL</h2>
+        <h3>Selecionando Dados de Tabelas</h3>
+        <pre><code>
+# Selecionando todos os dados
+usuarios = session.query(Usuario).all()
+
+# Selecionando com filtro
+usuarios = session.query(Usuario).filter_by(nome='Ana').all()
+        </code></pre>
+        <h3>Usando Filtros e Ordenação</h3>
+        <pre><code>
+# Filtros
+usuarios = session.query(Usuario).filter(Usuario.idade > 20).all()
+
+# Ordenação
+usuarios = session.query(Usuario).order_by(Usuario.idade).all()
+        </code></pre>
+    </section>
+
+    <section class="step">
+        <h2>Passo 6: Introdução a Chaves Primárias e Estrangeiras</h2>
+        <h3>Conceitos de Integridade Referencial</h3>
+        <p>Chaves primárias são identificadores únicos para registros em uma tabela. Chaves estrangeiras são referências a chaves primárias de outras tabelas, mantendo a integridade dos dados.</p>
+
+        <h3>Definindo Relações entre Tabelas com SQLAlchemy</h3>
+        <pre><code>
+from sqlalchemy import ForeignKey
+from sqlalchemy.orm import relationship
+
+class Endereco(Base):
+    __tablename__ = 'enderecos'
+    id = Column(Integer, primary_key=True)
+    rua = Column(String)
+    usuario_id = Column(Integer, ForeignKey('usuarios.id'))
+
+    usuario = relationship('Usuario', back_populates='enderecos')
+
+Usuario.enderecos = relationship('Endereco', order_by=Endereco.id, back_populates='usuario')
+        </code></pre>
+    </section>
+</main>
+{% endblock %}

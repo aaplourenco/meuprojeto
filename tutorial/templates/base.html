@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Meu Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/tutoriais.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Share+Tech&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+
+<body>
+    <header class="header-base">
+        <a class="logo" href="{% url 'index' %}"> {TutosDevs}</a>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">Sobre</a></li>
+                <li><a href="{% url 'contact' %}">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %} {% endblock %}
+
+    <footer>
+        <section class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 <strong>{TutosDevs}</strong> </p>
+            </div>
+            <div class="footer-links">
+                <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'about' %}">Sobre</a>
+                <a href="{% url 'contact' %}">Contato</a>
+            </div>
+        </section>
+        <section class="footer-dois">
+            <p>Site desenvolvido por <em>Ana Paula Lourenço</em> como parte do projeto de extensão e monitoria Grace -
+                USP
+            </p>
+        </section>
+    </footer>
+</body>
+
+
+</html>

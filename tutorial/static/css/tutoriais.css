@@ -1,0 +1,48 @@
+@import url('root.css');
+
+.step h2 {
+    color: #333;
+    font-family: var(--font-share-tech);
+}
+
+.step p {
+    color: #666;
+    font-family: var(--font-roboto-mono);
+}
+
+code {
+    background: #eee;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: var(--font-roboto-mono);
+}
+
+.titulo-tutos h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-family: var(--font-share-tech);
+}
+
+.step {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.command {
+    background: #fafafa;
+    font-family: var(--font-share-tech-mono);
+    padding: 8px;
+    border-left: 4px solid #333;
+    margin: 5px 0;
+}
+
+.listas-tutoriais {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}

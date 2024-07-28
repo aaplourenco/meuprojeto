@@ -1,0 +1,58 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.pyd
+*.pyo
+*.p~ 
+*.py~
+
+# Ambiente Virtual
+venv/
+env/
+
+# Arquivo de Banco de Dados SQLite
+db.sqlite3
+
+# Arquivos de Configuração do Django
+*.env
+.settings.py
+
+# Logs
+*.log
+
+# IDEs e Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Outros
+*.tmp
+*.bak
+*.swp
+*.swo
+*.DS_Store
+
+# Diretórios de arquivos estáticos gerados pelo Django
+/staticfiles/
+/media/
+
+# Diretórios de compilação
+build/
+dist/
+
+# Test Coverage
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+
+# Pylint
+pylint.log
